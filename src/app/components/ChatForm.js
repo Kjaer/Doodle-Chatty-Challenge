@@ -1,7 +1,8 @@
 import { sendMessage } from "../../api/chatty";
 import { useState } from "react";
 
-export function ChatForm() {
+export function ChatForm(props) {
+  const { messageSentNotifier } = props;
   const [message, setMessage] = useState("");
 
   async function submitMessage(event) {
@@ -19,6 +20,8 @@ export function ChatForm() {
     await sendMessage(payload).catch((error) => {
       throw new Error(`Last message could not send. ${error.toString()}`);
     });
+
+    messageSentNotifier(true);
   }
 
   const messageChangeHandler = (event) => {

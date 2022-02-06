@@ -2,17 +2,24 @@ import { useState, useEffect } from "react";
 import { getAllMessages } from "../../api/chatty";
 import { unescape } from "he";
 
-export function ChatHistory() {
+export function ChatHistory(props) {
+  const {
+    pullHistoryNotification,
+    pullHistoryNotifier
+  } = props;
   const [chatList, setChatList] = useState(null);
 
   useEffect(() => {
     async function fetchMessages() {
       const chatMessages = await getAllMessages();
       setChatList(chatMessages);
+      pullHistoryNotifier(false)
     }
 
-    fetchMessages();
-  }, []);
+    if (pullHistoryNotification) {
+      fetchMessages();
+    }
+  }, [pullHistoryNotification]);
 
   if (!chatList) {
     return <h1>Chat history loading...</h1>;
