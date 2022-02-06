@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { ChatForm } from "./components/ChatForm";
+import { ChatForm } from "./components/chat-form/ChatForm";
 import { ChatHistory } from "./components/chat-history/ChatHistory";
 
 import * as styles from "./App.module.css";

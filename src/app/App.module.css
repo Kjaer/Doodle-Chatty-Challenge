@@ -1,13 +1,16 @@
 @import "../../assets/css-reset.css";
 
-:root{
+:root {
+  --color-blue: #3798d4;
+  --color-orange: #ff876d;
   --chat-bubble-width: 420px;
   --color-text-gray: #b3bcc2;
+  --color-border-blue: #2e77a4;
   --color-border-gray: var(--color-text-gray);
   --color-chatBubble-yellow: #fbf6c5;
 }
 
-.patternBg{
+.patternBg {
   background: top left repeat url("../../assets/body_bg.png");
   height: 100vh;
   display: flex;

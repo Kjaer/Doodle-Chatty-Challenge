@@ -1,5 +1,7 @@
-import { sendMessage } from "../../api/chatty";
+import { sendMessage } from "../../../api/chatty";
 import { useState } from "react";
+
+import * as styles from "./ChatForm.module.css";
 
 export function ChatForm(props) {
   const { messageSentNotifier, sender: author } = props;
@@ -29,15 +31,18 @@ export function ChatForm(props) {
   };
 
   return (
-    <footer>
-      <form onSubmit={submitMessage}>
+    <footer className={styles.chatFormWrapper}>
+      <form onSubmit={submitMessage} className={styles.chatForm}>
         <input
           type="text"
           onChange={messageChangeHandler}
           value={message}
           placeholder="Message"
+          className={styles.messageInput}
         />
-        <button type="submit">Send</button>
+        <button type="submit" className={styles.sendButton}>
+          Send
+        </button>
       </form>
     </footer>
   );

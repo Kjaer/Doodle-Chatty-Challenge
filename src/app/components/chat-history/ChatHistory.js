@@ -52,7 +52,13 @@ export function ChatHistory(props) {
               >
                 {new Date(chat.timestamp).toLocaleString(
                   Intl.DateTimeFormat().resolvedOptions().locale,
-                  { hour: "2-digit", minute: "2-digit" }
+                  {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  }
                 )}
               </time>
             </article>

@@ -1,0 +1,28 @@
+.chatFormWrapper {
+  flex: 1 0 auto;
+  padding: .5rem;
+  background-color: var(--color-blue);
+}
+
+.chatForm {
+  composes: container from "../../App.module.css";
+  display: flex;
+}
+
+.messageInput{
+  flex: 1 0 auto;
+  margin-right: 0.5rem;
+  border: 2px solid var(--color-border-blue);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.sendButton{
+  background-color: var(--color-orange);
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
