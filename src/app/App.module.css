@@ -3,7 +3,8 @@
 :root{
   --chat-bubble-width: 420px;
   --color-text-gray: #b3bcc2;
-  --color-border-gray: #b3bcc2;
+  --color-border-gray: var(--color-text-gray);
+  --color-chatBubble-yellow: #fbf6c5;
 }
 
 .patternBg{

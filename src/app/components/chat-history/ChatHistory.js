@@ -35,10 +35,17 @@ export function ChatHistory(props) {
     <section className={styles.chatHistory}>
       <div>
         {chatList.map((chat) => (
-          <div key={chat._id} className={styles.chatBubbleWrapper}>
+          <div
+            key={chat._id}
+            className={`${styles.chatBubbleWrapper} ${
+              messageSender === chat.author
+                ? styles.myMessage
+                : styles.theirMessage
+            }`}
+          >
             <article className={styles.chatBubble}>
               <h6 className={styles.sender}>{chat.author}</h6>
-              <p>{unescape(chat.message)}</p>
+              <p className={styles.message}>{unescape(chat.message)}</p>
               <time
                 dateTime={new Date(chat.timestamp).toISOString()}
                 className={styles.timestamp}

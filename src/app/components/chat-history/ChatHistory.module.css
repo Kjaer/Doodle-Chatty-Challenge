@@ -25,3 +25,16 @@
 .chatBubbleWrapper{
   margin: 1rem 0;
 }
+
+.message,
+.theirMessage{
+  text-align: left;
+}
+
+.myMessage{
+  text-align: right;
+}
+
+.myMessage .chatBubble{
+  background-color: var(--color-chatBubble-yellow);
+}
