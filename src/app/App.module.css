@@ -1,7 +1,6 @@
 @import "../../assets/css-reset.css";
 
 :root{
-  --gutter-x: 1.5rem;
   --chat-bubble-width: 420px;
   --color-text-gray: #b3bcc2;
   --color-border-gray: #b3bcc2;
@@ -16,8 +15,8 @@
 
 .container {
   width: 100%;
-  padding-right: var(--gutter-x);
-  padding-left: var(--gutter-x);
+  padding-right:  1.5rem;
+  padding-left:  1.5rem;
   margin-right: auto;
   margin-left: auto;
 }

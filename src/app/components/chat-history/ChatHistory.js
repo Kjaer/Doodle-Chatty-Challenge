@@ -5,7 +5,7 @@ import { unescape } from "he";
 import * as styles from "./ChatHistory.module.css";
 
 export function ChatHistory(props) {
-  const { pullHistoryNotification, pullHistoryNotifier } = props;
+  const { pullHistoryNotification, pullHistoryNotifier, messageSender } = props;
   const [chatList, setChatList] = useState(null);
   const [intervalHandle, setIntervalHandler] = useState(0);
 
@@ -35,10 +35,7 @@ export function ChatHistory(props) {
     <section className={styles.chatHistory}>
       <div>
         {chatList.map((chat) => (
-          <div
-            key={chat._id}
-            className={styles.chatBubbleWrapper}
-          >
+          <div key={chat._id} className={styles.chatBubbleWrapper}>
             <article className={styles.chatBubble}>
               <h6 className={styles.sender}>{chat.author}</h6>
               <p>{unescape(chat.message)}</p>
