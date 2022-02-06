@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { getAllMessages, sendMessage } from "../api/chatty";
 import { unescape } from "he";
 
+import * as styles from "./App.module.css";
+
 export function App() {
   const [chatList, setChatList] = useState(null);
   const [message, setMessage] = useState("");
@@ -39,7 +41,7 @@ export function App() {
   }
 
   return(
-    <section>
+    <section className={styles.container}>
       {chatList.map((chat) => (
         <article key={chat._id}>
           <h6>{chat.author}</h6>

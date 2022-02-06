@@ -1,0 +1,24 @@
+@import "../../assets/css-reset.css";
+
+:root{
+  --gutter-x: 1.5rem;
+}
+
+.container {
+  width: 100%;
+  padding-right: var(--gutter-x);
+  padding-left: var(--gutter-x);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 640px;
+  }
+}
