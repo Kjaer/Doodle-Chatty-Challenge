@@ -3,21 +3,25 @@ import { getAllMessages } from "../../api/chatty";
 import { unescape } from "he";
 
 export function ChatHistory(props) {
-  const {
-    pullHistoryNotification,
-    pullHistoryNotifier
-  } = props;
+  const { pullHistoryNotification, pullHistoryNotifier } = props;
   const [chatList, setChatList] = useState(null);
+  const [intervalHandle, setIntervalHandler] = useState(0);
 
   useEffect(() => {
     async function fetchMessages() {
       const chatMessages = await getAllMessages();
       setChatList(chatMessages);
-      pullHistoryNotifier(false)
     }
 
     if (pullHistoryNotification) {
-      fetchMessages();
+      clearInterval(intervalHandle);
+
+      const intervalId = setInterval(async () => {
+        await fetchMessages();
+      }, 5000);
+
+      setIntervalHandler(intervalId);
+      pullHistoryNotifier(false);
     }
   }, [pullHistoryNotification]);
 

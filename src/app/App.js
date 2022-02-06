@@ -15,7 +15,7 @@ export function App() {
         pullHistoryNotifier={setNotifier}
       />
 
-      <ChatForm messageSentNotifier={setNotifier}/>
+      <ChatForm messageSentNotifier={setNotifier} />
     </section>
   );
 }
