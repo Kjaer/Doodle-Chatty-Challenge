@@ -1,9 +1,19 @@
 import { sendMessage } from "../../api/chatty";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function ChatForm(props) {
   const { messageSentNotifier } = props;
   const [message, setMessage] = useState("");
+  const [author, setAuthor] = useState("");
+
+  useEffect(() => {
+    if (author) {
+      return;
+    }
+
+    const authorName = window.prompt("Who's messaging?");
+    setAuthor(authorName);
+  }, [author]);
 
   async function submitMessage(event) {
     event.preventDefault();
@@ -14,7 +24,7 @@ export function ChatForm(props) {
 
     const payload = {
       message,
-      author: "Test Sender",
+      author,
     };
 
     await sendMessage(payload).catch((error) => {
