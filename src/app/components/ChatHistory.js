@@ -14,11 +14,11 @@ export function ChatHistory(props) {
     }
 
     if (pullHistoryNotification) {
+      fetchMessages();
+
       clearInterval(intervalHandle);
 
-      const intervalId = setInterval(async () => {
-        await fetchMessages();
-      }, 5000);
+      const intervalId = setInterval(fetchMessages, 5000);
 
       setIntervalHandler(intervalId);
       pullHistoryNotifier(false);
