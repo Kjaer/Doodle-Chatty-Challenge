@@ -2,6 +2,16 @@
 
 :root{
   --gutter-x: 1.5rem;
+  --chat-bubble-width: 420px;
+  --color-text-gray: #b3bcc2;
+  --color-border-gray: #b3bcc2;
+}
+
+.patternBg{
+  background: top left repeat url("../../assets/body_bg.png");
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {

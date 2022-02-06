@@ -1,0 +1,27 @@
+.chatHistory {
+  flex: 1 1 100%;
+  overflow:auto;
+  display: flex;
+  flex-direction: column-reverse;
+  composes: container from "../../App.module.css";
+}
+
+.chatBubble {
+  padding: 1rem;
+  max-width: var(--chat-bubble-width);
+  width: auto;
+  background: white;
+  border: 1px solid var(--color-border-gray);
+  border-radius: .5rem;
+  display: inline-block;
+}
+
+.chatBubble .sender,
+.chatBubble .timestamp{
+  color: var(--color-text-gray);
+  font-size: .75rem;
+}
+
+.chatBubbleWrapper{
+  margin: 1rem 0;
+}
