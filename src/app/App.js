@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getAllMessages, sendMessage } from "../api/chatty";
+import { unescape } from "he";
 
 export function App() {
   const [chatList, setChatList] = useState(null);
@@ -42,7 +43,7 @@ export function App() {
       {chatList.map((chat) => (
         <article key={chat._id}>
           <h6>{chat.author}</h6>
-          <p>{chat.message}</p>
+          <p>{unescape(chat.message)}</p>
           <time dateTime={new Date(chat.timestamp).toISOString()}>
             {new Date(chat.timestamp).toLocaleString(
               Intl.DateTimeFormat().resolvedOptions().locale,
